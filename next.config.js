@@ -1,10 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: { unoptimized: true },
-  output: "export",
-  experimental: {
-    optimizePackageImports: ["@phosphor-icons/react"],
-  },
+  // output: "export",
+  experimental: {},
 };
 
 module.exports = nextConfig;
