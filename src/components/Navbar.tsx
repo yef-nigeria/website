@@ -22,7 +22,7 @@ const aboutMenu: { title: string; href: string; description: string }[] = [
   },
   {
     title: "Thematic Areas",
-    href: "#",
+    href: "/about/thematic-areas",
     description: "Research & Areas of Interest",
   },
   {

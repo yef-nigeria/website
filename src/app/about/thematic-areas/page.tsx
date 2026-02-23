@@ -1,7 +1,7 @@
-import WhoWeAre from "@/app/pages/About/Who We Are";
+import ThematicAreas from "@/app/pages/About/Thematic Areas";
 
-const ThematicAreas = () => {
-  return <WhoWeAre />;
+const ThematicAreasPage = () => {
+  return <ThematicAreas />;
 };
 
-export default ThematicAreas;
+export default ThematicAreasPage;

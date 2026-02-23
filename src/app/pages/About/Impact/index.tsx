@@ -10,46 +10,8 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import Link from "next/link";
-import { SPONSOR_NAME } from "@/utils/constants";
+import { SPONSOR_NAME, THEMATIC_AREAS } from "@/utils/constants";
 
-const ThematicAreas = [
-  {
-    title: "Child Protection & Education",
-    subthemes: [
-      "School reintegration support",
-      "Scholarships & mentoring",
-      "Safe spaces for vulnerable children",
-    ],
-    description: "Thousands of children returned to education",
-  },
-  {
-    title: "Health & HIV Prevention",
-    subthemes: [
-      "HIV awareness programmes",
-      "Confidential hotline services",
-      "Testing & COnselling Support",
-    ],
-    description: "Millions reached with life-saving information",
-  },
-  {
-    title: "Youth Empowerment & Livelihoods",
-    subthemes: [
-      "Skills training & apprenticeships",
-      "Entrepreneurship support",
-      "Life skills development",
-    ],
-    description: "Young people equipped for sustainable futures ",
-  },
-  {
-    title: "Sports & Leadership Development",
-    subthemes: [
-      "Sports-for-development initiatives",
-      "Leadership training",
-      "Community engagement",
-    ],
-    description: "Confidence, teamwork, and positive life pathways",
-  },
-];
 
 const YEFIMPACT = () => {
   return (
@@ -170,7 +132,7 @@ const YEFIMPACT = () => {
         </div>
         <Carousel opts={{ loop: true }}>
           <CarouselContent>
-            {ThematicAreas.map(({ title, subthemes, description }, index) => (
+            {THEMATIC_AREAS.map(({ title, subthemes, description }, index) => (
               <CarouselItem className="w-full space-y-4" key={index}>
                 <div className="w-full h-full rounded-md bg-gray-500 p-6 transition-all flex justify-between gap-4 flex-col">
                   <p className="text-2xl font-medium z-20 relative text-white">
