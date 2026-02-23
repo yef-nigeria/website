@@ -1,22 +1,27 @@
-import './globals.css'
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import "./globals.css";
 
-const inter = Inter({ subsets: ['latin'] })
+import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
+
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: 'YEF Website',
-  description: 'Youth Empowerment Foundation',
-}
+  title: "YEF",
+  description: "Youth Empowerment Foundation",
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body>
+        <Navbar />
+        {children}
+        <Footer />
+      </body>
     </html>
-  )
+  );
 }
