@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import Button from "@/components/ui/Button";
+import { Button } from "@/components/ui/button";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -29,6 +29,11 @@ const aboutMenu: { title: string; href: string; description: string }[] = [
     title: "Research and Publications",
     href: "#",
     description: "Research & Areas of Interest",
+  },
+  {
+    title: "YEF Impact",
+    href: "/about/yef-impact",
+    description: "Community & Grassroots Social Impact",
   },
 ];
 
@@ -90,13 +95,15 @@ const Navbar = () => {
               <Link href="/young-people">the YEF blog</Link>
             </NavigationMenuLink>
           </NavigationMenuItem>
-          <Button
-            as="a"
-            href="https://give-usa.keela.co/youth-empowerment-foundation-donate-page"
-            target="_blank"
-            className="bg-gray-600 hover:bg-blue-600 text-white rounded-xl px-6 py-3"
-          >
-            Donate Now
+          <Button>
+            <Link
+              target="_blank"
+              href={
+                "https://give-usa.keela.co/youth-empowerment-foundation-donate-page"
+              }
+            >
+              Donate Now
+            </Link>
           </Button>
         </NavigationMenuList>
       </NavigationMenu>

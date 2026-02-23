@@ -2,15 +2,8 @@
 
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
-
-const PRESS_NAME = ["Guardian", "Punch", "Tribune", "Vanguard"];
-const SPONSOR_NAME = [
-  "OBF",
-  "Lagos State",
-  "Suntory",
-  "SFH",
-  "Standard Chartered",
-];
+import Link from "next/link";
+import { SPONSOR_NAME, PRESS_NAME, PROJECTS } from "@/utils/constants";
 
 export function Home() {
   return (
@@ -53,40 +46,15 @@ export function Home() {
           </div>
         </div>
         <div className="flex justify-between gap-6">
-          <div className="w-full space-y-4">
-            <div className="h-96 w-full rounded-md bg-brown-500 p-6 flex hover:rotate-3 transition-all" />
-            <p className="border border-brown-500 p-2 w-fit text-xs text-brown-500 rounded">
-              Girl Child
-            </p>
-            <p className="font-cab text-2xl font-medium">GOAL</p>
-          </div>
-          <div className="w-full space-y-4">
-            <div className="h-96 w-full rounded-md bg-blue-500 p-6 flex hover:rotate-3 transition-all rotate" />
-            <p className="border border-blue-500 p-2 w-fit text-xs text-blue-500 rounded">
-              Youth
-            </p>
-            <p className="font-cab text-2xl font-medium">
-              Empowered for The Future (E4F)
-            </p>
-          </div>
-          <div className="w-full space-y-4">
-            <div className="h-96 w-full rounded-md bg-gray-500 p-6 flex hover:rotate-3 transition-all" />
-            <p className="border border-gray-500 p-2 w-fit text-xs text-gray-500 rounded">
-              Youth
-            </p>
-            <p className="font-cab text-2xl font-medium">
-              Skills For Life (S4L)
-            </p>
-          </div>
-          <div className="w-full space-y-4">
-            <div className="h-96 w-full rounded-md bg-gray-500 p-6 flex transition-all" />
-            <p className="border border-gray-500 p-2 w-fit text-xs text-gray-500 rounded">
-              Youth
-            </p>
-            <p className="font-cab text-2xl font-medium">
-              Guild For Life (B4L)
-            </p>
-          </div>
+          {PROJECTS.map(({ title, focus }, i) => (
+            <div className="w-full space-y-4" key={i}>
+              <div className="h-52 w-full rounded-md bg-brown-500 p-6 flex hover:rotate-3 transition-all" />
+              <p className="border border-brown-500 p-2 w-fit text-xs text-brown-500 rounded">
+                {focus}
+              </p>
+              <p className="font-cab text-2xl font-medium">{title}</p>
+            </div>
+          ))}
         </div>
       </div>
       <div className="bg-blue-500 text-white py-32">
@@ -100,9 +68,13 @@ export function Home() {
                 healthy, productive, and purpose-driven lives.
               </p>
             </div>
-            <div className="flex justify-between items-center p-3 border-t-[1px] border-gray-100/10 w-full hover:bg-gray-100/10 transition-all h-fit font-bold">
+
+            <Link
+              href={"about/yef-impact"}
+              className="flex justify-between items-center p-3 border-t-[1px] border-gray-100/10 w-full hover:bg-gray-100/10 transition-all h-fit font-bold"
+            >
               Learn more about the YEF Impact <ArrowRight strokeWidth={1.25} />
-            </div>
+            </Link>
           </div>
           <div className="space-y-14">
             <p className="font-cab text-4xl font-semibold">

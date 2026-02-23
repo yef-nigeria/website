@@ -1,4 +1,4 @@
-import Button from "@/components/ui/Button";
+import { Button } from "@/components/ui/button";
 import React from "react";
 
 const YoungPeople = () => {
@@ -27,7 +27,7 @@ const YoungPeople = () => {
               <div key={i} className={"text-2xl font-semibold text-blue-600"}>
                 {value}
               </div>
-            )
+            ),
           )}
         </div>
       </section>
@@ -51,17 +51,24 @@ const YoungPeople = () => {
           <div className="flex items-center gap-4">
             <div className="bg-gray-600 rounded-full h-12 w-12" />
             <span className="font-cab text-xl text-brown-500 font-semibold">
-              Idiah Jah&apos;swill
+              Emmanuel Chiamaka
             </span>
           </div>
           <p>
-            With gladness and a heart filled with appreciation, I say thank You
-            YEF and #FCMB for making my life more interesting and most
-            importantly adding value to it.  Looking back, I can only smile with
-            joy in my heart, knowing the decision I took to join the empowerment
-            training program to master my chosen vocation (tailoring) was not in
-            vain.  Now, I am confident that I have learned so well to stand out
-            amongst millions out there.
+            I benefited from the SCB (School-Based) Goal project few years ago.
+            Recently I was selected for Skills for Life project (S4L) project. I
+            learned Make-Up and Gele at Rullion capacity Builders in Surulere,
+            Lagos. It took me 3 months to complete my training. This opportunity
+            has exposed me to lots of people who in turn have become my
+            customers. I train interested apprentices on the vocation and have a
+            fan base of over 100 on Facebook. Every week I make at least 10000
+            (ten thousand) Naira and render home service almost every weekend. I
+            can now boast of a good amount of money in my savings account which
+            I will be using to register my Jamb exams very soon. However, I am
+            also making a frantic effort to register my business brand with CAC
+            (Cooperate Affairs Commission) as soon as possible. I am so grateful
+            to SCB and YEF for changing my life for best. Honestly, I can’t
+            thank them enough!
           </p>
         </div>
         <div className="space-y-8 col-span-4 bg-blue-100 p-5">
@@ -85,27 +92,23 @@ const YoungPeople = () => {
           <div className="flex items-center gap-4">
             <div className="bg-gray-600 rounded-full h-12 w-12" />
             <span className="font-cab text-xl text-brown-500 font-semibold">
-              Idiah Jah&apos;swill
+              Miss. Ahuchaogu C.
             </span>
           </div>
           <p>
-            With gladness and a heart filled with appreciation, I say thank You
-            YEF and #FCMB for making my life more interesting and most
-            importantly adding value to it.  Looking back, I can only smile with
-            joy in my heart, knowing the decision I took to join the empowerment
-            training program to master my chosen vocation (tailoring) was not in
-            vain.  Now, I am confident that I have learned so well to stand out
-            amongst millions out there.
+            "Well, before I was picked by the Youth Empowerment Foundation
+            (YEF), I would say I have been in the dark, so naïve. But thanks to
+            YEF and Standard Chartered Bank who sponsored me in computer
+            training and other skills for life. I feel like I have just been
+            born into the present world. So far, my experience with Youth
+            Empowerment Foundation and Standard Chartered Bank has been great
+            and sometimes I wish it would never end and for that I am grateful."
           </p>
         </div>
       </section>
       <div className="container mx-auto leading-tight text-center space-y-5">
-        <p className="font-bold text-2xl">
-          Come along and be a part of us!
-        </p>
-        <Button className="bg-gray-600 hover:bg-blue-600 text-white rounded-xl px-6 py-3">
-          Join Now
-        </Button>
+        <p className="font-bold text-2xl">Come along and be a part of us!</p>
+        <Button>Join Now</Button>
       </div>
     </div>
   );

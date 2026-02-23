@@ -1,4 +1,15 @@
 import React from "react";
+import HistoryTimeline from "../History Timeline";
+
+const OUR_TEAM = [
+  { name: "Iwalola Akin-Jimoh", role: "Executive Secretary" },
+  { name: "Bukola Favour Akingbohungbe", role: "Program Officer" },
+  { name: "Funmi Longe", role: "Finance and Admin Manager" },
+  { name: "Ugwuoke Oliver Osita", role: "M/E Officer" },
+  { name: "Tony Eleme", role: "Social Media manager/Programme Officer" },
+  { name: "Tolulope Osoba", role: "Programme Manager" },
+  { name: "Adegbaju Festus", role: "Finance and Administrative Assistant" },
+];
 
 const WhoWeAre = () => {
   return (
@@ -31,58 +42,10 @@ const WhoWeAre = () => {
             help unlock their full potential.
           </p>
         </div>
-        <section className="bg-brown-100" id="history">
+        <section className="bg-gray-50" id="history">
           <div className="container mx-auto py-32 space-y-8">
             <p className="font-bold text-gray-400">Our History</p>
-            <div className="grid grid-cols-12">
-              <div className="col-span-2">
-                <div className="flex justify-between flex-col h-full gap-6">
-                  {[
-                    { year: "1995", isActive: true },
-                    { year: "2001", isActive: false },
-                    { year: "2006", isActive: false },
-                    { year: "2010s", isActive: false },
-                    { year: "2020s", isActive: false },
-                  ].map(({ year, isActive }, i) => (
-                    <button
-                      key={i}
-                      className={`${isActive ? "text-white font-medium bg-" : "text-brown-500 border border-"}brown-500 w-20 text-center p-3 rounded-md `}
-                    >
-                      {year}
-                    </button>
-                  ))}
-                </div>
-              </div>
-              <div className="col-span-10 space-y-8">
-                <p className="text-xl leading-relaxed">
-                  Founded in{" "}
-                  <span className="font-medium text-3xl text-brown-500 tracking-tighter">
-                    1995
-                  </span>{" "}
-                  by sisters Iwalola Akin‑Jimoh and Fiwasade Onifade, the Youth
-                  Empowerment Foundation (YEF) emerged from a simple but urgent
-                  observation:{" "}
-                  <b>
-                    Nigeria’s youth population was growing rapidly, yet support
-                    systems were not.{" "}
-                  </b>{" "}
-                  <br />
-                  In its earliest years, YEF focused on research and grassroots
-                  engagement; listening to young people, mapping their needs,
-                  and building community-based responses that would shape
-                  decades of programming.
-                </p>
-                {/* <div className="flex justify-between gap-4">
-                  {[1, 2].map((item) => (
-                    <div
-                      key={item}
-                      className="bg-gray-50 w-full h-72 rounded-2xl"
-                      title={`card ${item}`}
-                    />
-                  ))}
-                </div> */}
-              </div>
-            </div>
+            <HistoryTimeline />
           </div>
         </section>
         <section className="container mx-auto grid grid-cols-12 gap-12">
@@ -119,15 +82,17 @@ const WhoWeAre = () => {
             </p>
           </div>
         </section>
-        <section className="container mx-auto">
+        <section className="container mx-auto" id="team">
           <p className="font-bold text-gray-400">Our Team</p>
           <div className="grid grid-cols-4 gap-12 mt-12">
-            {new Array(8).fill(null).map((_, i) => (
-              <div
-                key={i}
-                className="bg-gray-50 w-full h-72 rounded-2xl"
-                title={`card ${i}`}
-              />
+            {OUR_TEAM.map((member, i) => (
+              <div className="w-full space-y-4">
+                <div className="h-96 w-full rounded-md bg-brown-500 p-6 flex hover:rotate-3 transition-all" />
+                <p className="border border-brown-500 p-2 w-fit text-xs text-brown-500 rounded">
+                  {member.role}
+                </p>
+                <p className="font-cab text-2xl font-medium">{member.name}</p>
+              </div>
             ))}
           </div>
         </section>
