@@ -153,7 +153,7 @@ const YEFIMPACT = () => {
               href={"who-we-are#history"}
               className="flex justify-between items-center p-3 border-t-[1px] border-gray-100 w-full hover:bg-gray-100 h-fit font-bold"
             >
-              Learn more about YEF's History
+              Learn more about YEF&apos;s History
               <ArrowRight strokeWidth={1.25} />
             </Link>
           </div>
@@ -179,7 +179,10 @@ const YEFIMPACT = () => {
                   <p className="text-gray-200">{description}</p>
                   <div className="flex gap-6">
                     {subthemes.map((text, i) => (
-                      <p className="border border-blue-300 p-1 w-fit text-xs text-blue-200 rounded">
+                      <p
+                        className="border border-blue-300 p-1 w-fit text-xs text-blue-200 rounded"
+                        key={i}
+                      >
                         {text}
                       </p>
                     ))}
@@ -249,13 +252,13 @@ const YEFIMPACT = () => {
             </span>
           </div>
           <p>
-            "Well, before I was picked by the Youth Empowerment Foundation
-            (YEF), I would say I have been in the dark, so naïve. But thanks to
-            YEF and Standard Chartered Bank who sponsored me in computer
-            training and other skills for life. I feel like I have just been
-            born into the present world. So far, my experience with Youth
-            Empowerment Foundation and Standard Chartered Bank has been great
-            and sometimes I wish it would never end and for that I am grateful."
+            Well, before I was picked by the Youth Empowerment Foundation (YEF),
+            I would say I have been in the dark, so naïve. But thanks to YEF and
+            Standard Chartered Bank who sponsored me in computer training and
+            other skills for life. I feel like I have just been born into the
+            present world. So far, my experience with Youth Empowerment
+            Foundation and Standard Chartered Bank has been great and sometimes
+            I wish it would never end and for that I am grateful.
           </p>
         </div>
       </section>

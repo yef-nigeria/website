@@ -47,12 +47,12 @@ export function Home() {
         </div>
         <div className="flex justify-between gap-6">
           {PROJECTS.map(({ title, focus }, i) => (
-            <div className="w-full space-y-4" key={i}>
+            <div className="w-full space-y-2" key={i}>
               <div className="h-52 w-full rounded-md bg-brown-500 p-6 flex hover:rotate-3 transition-all" />
               <p className="border border-brown-500 p-2 w-fit text-xs text-brown-500 rounded">
                 {focus}
               </p>
-              <p className="font-cab text-2xl font-medium">{title}</p>
+              <p className="font-cab text-xl font-medium">{title}</p>
             </div>
           ))}
         </div>

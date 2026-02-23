@@ -96,13 +96,13 @@ const YoungPeople = () => {
             </span>
           </div>
           <p>
-            "Well, before I was picked by the Youth Empowerment Foundation
+            Well, before I was picked by the Youth Empowerment Foundation
             (YEF), I would say I have been in the dark, so naïve. But thanks to
             YEF and Standard Chartered Bank who sponsored me in computer
             training and other skills for life. I feel like I have just been
             born into the present world. So far, my experience with Youth
             Empowerment Foundation and Standard Chartered Bank has been great
-            and sometimes I wish it would never end and for that I am grateful."
+            and sometimes I wish it would never end and for that I am grateful.
           </p>
         </div>
       </section>

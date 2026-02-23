@@ -1,7 +1,11 @@
 "use client";
 import { useEffect, useState } from "react";
+interface YearItem {
+  year: string;
+  isActive: boolean;
+}
 
-const historyContent = {
+const historyContent: Record<string, React.ReactNode> = {
   "1995": (
     <>
       Founded in{" "}
@@ -39,7 +43,7 @@ const historyContent = {
 };
 
 export default function HistoryTimeline() {
-  const initialData = [
+  const initialData: YearItem[] = [
     { year: "1995", isActive: true },
     { year: "2001", isActive: false },
     { year: "2006", isActive: false },
@@ -47,7 +51,7 @@ export default function HistoryTimeline() {
     { year: "2020s", isActive: false },
   ];
 
-  const [years, setYears] = useState(initialData);
+  const [years, setYears] = useState<YearItem[]>(initialData);
   const activeYear = years.find((y) => y.isActive)?.year;
 
   // 🔄 Auto-cycle every 10 seconds
@@ -56,18 +60,15 @@ export default function HistoryTimeline() {
       setYears((prev) => {
         const currentIndex = prev.findIndex((y) => y.isActive);
         const nextIndex = (currentIndex + 1) % prev.length;
-
         return prev.map((y, i) => ({
           ...y,
           isActive: i === nextIndex,
         }));
       });
     }, 6000);
-
     return () => clearInterval(interval);
   }, []);
 
-  // 👆 Handle click
   const handleClick = (year: string) => {
     setYears((prev) =>
       prev.map((y) => ({
@@ -86,7 +87,11 @@ export default function HistoryTimeline() {
             <button
               key={item.year}
               onClick={() => handleClick(item.year)}
-              className={`${item.isActive ? "scale-110 text-white font-medium bg-" : "text-blue-500 border border-"}blue-600 w-20 text-center p-3 rounded-md block hover:scale-105 transition-all`}
+              className={`w-20 text-center p-3 rounded-md block hover:scale-105 transition-all ${
+                item.isActive
+                  ? "scale-110 text-white font-medium bg-blue-600"
+                  : "text-blue-500 border border-blue-600"
+              }`}
             >
               {item.year}
             </button>
@@ -97,7 +102,7 @@ export default function HistoryTimeline() {
         <div className="col-span-10 h-[580px] flex flex-col">
           <div className="flex-1 overflow-y-auto">
             <p className="text-xl leading-relaxed text-gray-800">
-              {historyContent[activeYear]}
+              {activeYear ? historyContent[activeYear] : null}
             </p>
           </div>
 

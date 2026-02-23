@@ -86,7 +86,7 @@ const WhoWeAre = () => {
           <p className="font-bold text-gray-400">Our Team</p>
           <div className="grid grid-cols-4 gap-12 mt-12">
             {OUR_TEAM.map((member, i) => (
-              <div className="w-full space-y-4">
+              <div className="w-full space-y-4" key={i}>
                 <div className="h-96 w-full rounded-md bg-brown-500 p-6 flex hover:rotate-3 transition-all" />
                 <p className="border border-brown-500 p-2 w-fit text-xs text-brown-500 rounded">
                   {member.role}
