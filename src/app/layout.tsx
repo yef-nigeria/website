@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: "Youth Empowerment Foundation",
   description:
     "Youth Empowerment Foundation – A not-for-profit based in sub-saharan Africa working to up-skill the youth populace to give them a chance at a better future",
-  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL!),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_VERCEL_URL!),
   openGraph: {
     images: "/assets/images/usaid-girls-cropped.jpg",
   },
