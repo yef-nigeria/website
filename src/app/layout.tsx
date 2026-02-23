@@ -6,8 +6,13 @@ import Navbar from "@/components/Navbar";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "YEF",
-  description: "Youth Empowerment Foundation",
+  title: "Youth Empowerment Foundation",
+  description:
+    "Youth Empowerment Foundation – A not-for-profit based in sub-saharan Africa working to up-skill the youth populace to give them a chance at a better future",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL!),
+  openGraph: {
+    images: "/assets/images/usaid-girls-cropped.jpg",
+  },
 };
 
 export default function RootLayout({
