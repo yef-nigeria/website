@@ -26,13 +26,13 @@ const Footer = () => {
 
         <div className="space-y-3 col-span-2">
           <div className="space-x-3">
-            <p>48, Akerele Street, Surulere, 101241, Lagos, Nigeria</p>
+            <p>43, Akerele Street, Surulere, 101241, Lagos, Nigeria</p>
           </div>
           <div className="space-x-3">
-            <p>+234 809 111 1485</p>
+            <Link href="tel:+2348091111485">+234 809 111 1485</Link>
           </div>
           <div className="space-x-3">
-            <p>info@yefnigeria.org</p>
+            <Link href="mailto:info@yefnigeria.org">info@yefnigeria.org</Link>
           </div>
         </div>
         <div>
