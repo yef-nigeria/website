@@ -1,7 +1,7 @@
-import WhoWeAre from "@/app/pages/About/Who We Are";
+import ResearchAndPublications from "@/app/pages/About/Research and Publications";
 
-const ResearchAndPublications = () => {
-  return <WhoWeAre />;
+const ResearchAndPublicationsPage = () => {
+  return <ResearchAndPublications />;
 };
 
-export default ResearchAndPublications;
+export default ResearchAndPublicationsPage;
