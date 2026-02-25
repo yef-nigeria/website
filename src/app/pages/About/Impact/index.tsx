@@ -12,8 +12,7 @@ import {
 import Link from "next/link";
 import { SPONSOR_NAME, THEMATIC_AREAS } from "@/utils/constants";
 
-
-const YEFIMPACT = () => {
+const YEFImpact = () => {
   return (
     <div className="space-y-32">
       <div className="flex w-full">
@@ -101,7 +100,7 @@ const YEFIMPACT = () => {
               </div>
             </div>
           </div>
-          <div className="flex gap-12">
+          <div className="grid grid-cols-2 gap-6">
             <div className="space-y-6 w-full">
               {/* <p className="font-bold text-gray-400">The YEF Impact</p> */}
               <p>
@@ -121,8 +120,8 @@ const YEFIMPACT = () => {
           </div>
         </div>
       </section>
-      <section className="container mx-auto space-y-12">
-        <div className="space-y-6">
+      <section className="container mx-auto grid grid-cols-2 gap-6">
+        <div className="space-y-6 w-full">
           <p className="font-bold text-gray-400">Thematic Areas</p>
           <p className="max-w-xl">
             YEF’s work is structured around key thematic areas that address the
@@ -133,16 +132,14 @@ const YEFIMPACT = () => {
         <Carousel opts={{ loop: true }}>
           <CarouselContent>
             {THEMATIC_AREAS.map(({ title, subthemes, description }, index) => (
-              <CarouselItem className="w-full space-y-4" key={index}>
-                <div className="w-full h-full rounded-md bg-gray-500 p-6 transition-all flex justify-between gap-4 flex-col">
-                  <p className="text-2xl font-medium z-20 relative text-white">
-                    {title}
-                  </p>
-                  <p className="text-gray-200">{description}</p>
-                  <div className="flex gap-6">
+              <CarouselItem className="space-y-4 w-full text-white" key={index}>
+                <div className="rounded-md bg-blue-500 p-6 transition-all flex justify-between gap-4 flex-col">
+                  <p className="text-2xl font-medium z-20 relative">{title}</p>
+                  <p className="text-blue-200">{description}</p>
+                  <div className="flex gap-3">
                     {subthemes.map((text, i) => (
                       <p
-                        className="border border-blue-300 p-1 w-fit text-xs text-blue-200 rounded"
+                        className="border border-blue-300 p-1 w-fit text-xs rounded"
                         key={i}
                       >
                         {text}
@@ -254,4 +251,4 @@ const YEFIMPACT = () => {
   );
 };
 
-export default YEFIMPACT;
+export default YEFImpact;
