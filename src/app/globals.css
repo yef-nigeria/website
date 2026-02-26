@@ -47,8 +47,6 @@ body {
   @apply bg-white text-gray-600;
 }
 
-
-
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -105,8 +103,6 @@ body {
   }
 }
 
-
-
 @layer base {
   * {
     @apply border-border;
@@ -114,4 +110,12 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

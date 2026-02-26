@@ -63,16 +63,14 @@ const Navbar = () => {
             </NavigationMenuLink>
 
             <NavigationMenuContent>
-              <ul className="grid w-[350px] gap-2 p-2">
+              <ul className="grid w-[350px] gap- p-2">
                 {aboutMenu.map((item) => (
                   <ListItem
                     key={item.title}
                     title={item.title}
                     href={item.href}
-                    className="hover:bg-blue-100 p-2 rounded-md transition-all"
-                  >
-                    {item.description}
-                  </ListItem>
+                    className="hover:bg-blue-100 hover:text-blue-500 p-2 rounded-md transition-all"
+                  />
                 ))}
               </ul>
             </NavigationMenuContent>
