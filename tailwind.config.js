@@ -37,6 +37,8 @@ module.exports = {
         500: "#7F4C22",
         600: "#2A190B",
       },
+      accent: { base: "#F2994A" },
+      secondary: { base: "#27AE60" },
     },
     fontFamily: {
       sat: ["Satoshi", ...fontFamily.sans],

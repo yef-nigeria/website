@@ -17,10 +17,7 @@ const YEFImpact = () => {
     <div className="space-y-16 md:space-y-24 lg:space-y-32">
       <div className="grid grid-cols-2 md:flex w-full">
         {[1, 2, 3, 4].map((_, i) => (
-          <div
-            key={i}
-            className="h-48 sm:h-64 md:h-[400px] md:flex-1 relative"
-          >
+          <div key={i} className="h-48 sm:h-64 md:h-[400px] md:flex-1 relative">
             <Image
               src={`/assets/images/impact-${i + 1}.png`}
               alt={`impact-${i + 1}`}
@@ -64,43 +61,43 @@ const YEFImpact = () => {
             <p className="font-medium text-gray-100 text-right text-xl sm:text-2xl lg:text-3xl font-cab z-20 relative bg-gray-500 p-3 rounded-xl rotate-2 w-fit">
               Impact Stats
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 mt-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 mt-4 text-white">
               <div className="w-full space-y-4 ">
-                <div className="w-full h-full rounded-md bg-brown-500 p-6 hover:rotate-2 transition-all flex justify-between gap-4 flex-col">
-                  <p className="text-lg sm:text-2xl font-medium z-20 relative text-white">
+                <div className="w-full h-full rounded-md bg-secondary-base p-6 hover:rotate-2 transition-all flex justify-between gap-4 flex-col">
+                  <p className="text-lg sm:text-2xl font-medium z-20 relative">
                     Workshops Conducted
                   </p>
-                  <p className="text-4xl sm:text-6xl lg:text-7xl font-medium text-brown-300">
+                  <p className="text-4xl sm:text-6xl lg:text-7xl font-medium opacity-70 ">
                     2,000
                   </p>
                 </div>
               </div>
               <div className="w-full space-y-4 relative">
-                <div className="w-full h-full rounded-md bg-blue-500 p-6 hover:rotate-2 transition-all flex justify-between gap-4 flex-col">
-                  <p className="text-lg sm:text-2xl font-medium z-20 relative text-white">
+                <div className="w-full h-full rounded-md bg-secondary-base p-6 hover:rotate-2 transition-all flex justify-between gap-4 flex-col">
+                  <p className="text-lg sm:text-2xl font-medium z-20 relative">
                     Female Apprentices
                   </p>
-                  <p className="text-4xl sm:text-6xl lg:text-7xl font-medium z-20 relative text-blue-200">
+                  <p className="text-4xl sm:text-6xl lg:text-7xl font-medium opacity-70 z-20 relative">
                     5,000
                   </p>
                 </div>
               </div>
               <div className="w-full space-y-4 relative">
-                <div className="w-full h-full rounded-md bg-brown-500 p-6 hover:rotate-2 transition-all flex justify-between gap-4 flex-col">
-                  <p className="text-lg sm:text-2xl font-medium z-20 relative text-white">
+                <div className="w-full h-full rounded-md bg-secondary-base p-6 hover:rotate-2 transition-all flex justify-between gap-4 flex-col">
+                  <p className="text-lg sm:text-2xl font-medium z-20 relative">
                     HIV hotline reach
                   </p>
-                  <p className="text-4xl sm:text-6xl lg:text-7xl font-medium z-20 relative text-brown-300">
+                  <p className="text-4xl sm:text-6xl lg:text-7xl font-medium opacity-70 z-20 relative ">
                     2 m
                   </p>
                 </div>
               </div>
               <div className="w-full space-y-4 relative">
-                <div className="w-full h-full rounded-md bg-blue-500 p-6 hover:rotate-2 transition-all flex justify-between gap-4 flex-col">
-                  <p className="text-lg sm:text-2xl font-medium z-20 relative text-white">
+                <div className="w-full h-full rounded-md bg-secondary-base p-6 hover:rotate-2 transition-all flex justify-between gap-4 flex-col">
+                  <p className="text-lg sm:text-2xl font-medium z-20 relative">
                     Project Beneficiaries
                   </p>
-                  <p className="text-4xl sm:text-6xl lg:text-7xl font-medium z-20 relative text-blue-200">
+                  <p className="text-4xl sm:text-6xl lg:text-7xl font-medium opacity-70 z-20 relative">
                     100k
                   </p>
                 </div>
@@ -139,7 +136,10 @@ const YEFImpact = () => {
         <Carousel opts={{ loop: true }} className="mt-10 lg:mt-0">
           <CarouselContent>
             {THEMATIC_AREAS.map(({ title, subthemes, description }, index) => (
-              <CarouselItem className="space-y-4 w-full text-white h-full" key={index}>
+              <CarouselItem
+                className="space-y-4 w-full text-white h-full"
+                key={index}
+              >
                 <div className="rounded-md bg-blue-500 p-6 transition-all flex justify-between gap-4 flex-col">
                   <p className="text-lg sm:text-2xl font-medium z-20 relative">
                     {title}
@@ -173,10 +173,10 @@ const YEFImpact = () => {
             </p>
           </div>
         </div>
-        <div className="space-y-6 sm:space-y-8 bg-brown-100 p-5 rounded-xl">
+        <div className="space-y-6 sm:space-y-8 bg-blue-100 p-5 rounded-xl">
           <div className="flex items-center gap-4">
             <div className="bg-gray-600 rounded-full h-12 w-12" />
-            <span className="font-cab text-xl text-brown-500 font-semibold">
+            <span className="font-cab text-xl text-blue-500 font-semibold">
               Emmanuel Chiamaka
             </span>
           </div>
@@ -214,10 +214,10 @@ const YEFImpact = () => {
             amongst millions out there.
           </p>
         </div>
-        <div className="space-y-6 sm:space-y-8 bg-brown-100 p-5 rounded-xl">
+        <div className="space-y-6 sm:space-y-8 bg-blue-100 p-5 rounded-xl">
           <div className="flex items-center gap-4">
             <div className="bg-gray-600 rounded-full h-12 w-12" />
-            <span className="font-cab text-xl text-brown-500 font-semibold">
+            <span className="font-cab text-xl text-blue-500 font-semibold">
               Miss. Ahuchaogu C.
             </span>
           </div>
@@ -241,7 +241,10 @@ const YEFImpact = () => {
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10 lg:gap-16">
             {SPONSOR_NAME.map((item) => (
-              <div className="h-28 sm:h-36 lg:h-44 w-full flex p-4 sm:p-6 relative bg-white/40 rounded-xl" key={item}>
+              <div
+                className="h-28 sm:h-36 lg:h-44 w-full flex p-4 sm:p-6 relative bg-white/40 rounded-xl"
+                key={item}
+              >
                 <Image
                   src={`/assets/images/logos/${item.toLowerCase().replace(" ", "-")}-logo.png`}
                   className="m-auto p-4 sm:p-6 object-contain"
