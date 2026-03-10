@@ -55,7 +55,7 @@ const OUR_TEAM = [
     ),
   },
   {
-    name: "Olufunmilayo Longe",
+    name: "Olufunmilayo Alabi",
     role: "Finance and Admin Manager",
     imageSrc: "/assets/images/staff/funmi.png",
     profile: (
