@@ -56,7 +56,7 @@ const ResearchAndPublications = async () => {
           </p>
         </div> */}
       </section>
-      <div className="bg-brown-100">
+      <div className="bg-blue-100">
         {/* {`text-${index % 2 === 0 ? "blue-200" : "brown-300"}`} */}
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8 lg:gap-12 py-12 sm:py-16 lg:py-24">
           {pubs.map(
@@ -65,7 +65,7 @@ const ResearchAndPublications = async () => {
               return (
                 <div key={sys.id}>
                   <div className="w-full space-y-2">
-                    <div className="h-56 sm:h-72 lg:h-80 w-full rounded-xl bg-brown-500 p-6 flex flex-col justify-between group hover:-translate-y-2 hover:shadow-xl transition-all duration-500">
+                    <div className="h-56 sm:h-72 lg:h-80 w-full rounded-xl bg-secondary-base p-6 flex flex-col justify-between group hover:-translate-y-2 hover:shadow-xl transition-all duration-500">
                       <span className="text-sm opacity-80 text-white">
                         Publication
                       </span>
