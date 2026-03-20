@@ -7,6 +7,7 @@ import { Eye, Download } from "lucide-react";
 import React from "react";
 import { getPublications } from "@/utils/api";
 import ViewPublication, { ContentfulAsset } from "./ViewPublication";
+import Link from "next/link";
 
 const PUBLICATIONS = [
   {
@@ -64,7 +65,9 @@ const ResearchAndPublications = async () => {
               
               return (
                 <div key={sys.id}>
+                  
                   <div className="w-full space-y-2">
+                    <Link href={`https:${(publicationFile as ContentfulAsset).fields.file.url}`} target="_blank">
                     <div className="h-56 sm:h-72 lg:h-80 w-full rounded-xl bg-secondary-base p-6 flex flex-col justify-between group hover:-translate-y-2 hover:shadow-xl transition-all duration-500">
                       <span className="text-sm opacity-80 text-white">
                         Publication
@@ -84,7 +87,9 @@ const ResearchAndPublications = async () => {
                         document={publicationFile as ContentfulAsset}
                       />
                     </div>
+                    </Link>
                   </div>
+                  
                 </div>
               );
             },

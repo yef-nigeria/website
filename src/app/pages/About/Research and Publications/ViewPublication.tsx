@@ -44,14 +44,14 @@ const ViewPublication = ({ document }: { document: ContentfulAsset }) => {
     <Dialog>
       {/* Trigger */}
       {/* <DialogTrigger asChild> */}
-      <Link
-        href={pdfUrl}
-        target="_blank"
+      <p
+        // href={pdfUrl}
+        // target="_blank"
         className="text-sm flex items-center gap-1"
       >
         <Eye strokeWidth={1} size={16} />
         View
-      </Link>
+      </p>
       {/* </DialogTrigger> */}
 
       {/* Modal */}
