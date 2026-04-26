@@ -8,7 +8,43 @@ const OUR_TEAM = [
     name: "Iwalola Akin-Jimoh",
     role: "Executive Secretary",
     imageSrc: "/assets/images/staff/iwalola.png",
-    profile: "",
+    profile: (
+      <div>
+        <p>
+          Iwalola is a public health specialist, a Nutritionist and an avid
+          sports lover. She has first and post-graduate degrees in Human
+          Nutrition from University of Ibadan. At the age of 25 years she won
+          theMacArthur Foundation Fund for leadership Development grant, which
+          she used for 3 years to study and identify the gaps in reproductive
+          health services for adolescents in South-West Nigeria. Iwalola was a
+          lecturer at the Department of Vocational and Technical Education,
+          Ahmadu Bello University, Zaria in 1996, she also worked at the UAC,
+          Nigeria in 1999 as a Management Trainee in UAC Foods. She was the past
+          Executive Director of Ovie Brume Foundation a civil society
+          organization that focuses primarily on education, livelihoods, health,
+          and leadership development and currently the Executive Secretary of
+          Youth Empowerment Foundation, an organization she co-founded in 1995.
+          She has over 3 decades of experience working in the civil society
+          sector within and outside Nigeria.
+        </p>
+        <p>
+          Iwalola has extensive experience in public health, HIV/AIDS, strategic
+          behavior change health communication (SBCC), education, livelihoods,
+          nutrition and project management with more than 22 years professional
+          experience at the community level. Iwalola believes very strongly in
+          capacity-building for individuals and communities, as a means of
+          establishing effective and sustainable communities. She was a Choice
+          USA fellow (1999) for women in the field of reproductive health and
+          also a Vital Voices Fellowship beneficiary for women leaders in the
+          World (2013-2015). She recently completed her degree for a master’s in
+          public health (MPH) in 2025.
+        </p>
+        <p>
+          Iwalola is on the board of several civil society organizations in
+          Nigeria.
+        </p>
+      </div>
+    ),
   },
   {
     name: "Bukola Favour Akingbohungbe",
@@ -55,7 +91,7 @@ const OUR_TEAM = [
     ),
   },
   {
-    name: "Olufunmilayo Longe",
+    name: "Olufunmilayo Alabi",
     role: "Finance and Admin Manager",
     imageSrc: "/assets/images/staff/funmi.png",
     profile: (
