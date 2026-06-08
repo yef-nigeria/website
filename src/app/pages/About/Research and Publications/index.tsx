@@ -41,7 +41,7 @@ const ResearchAndPublications = async () => {
     <div className="my-24 lg:my-32">
       <section className="container mx-auto px-4 sm:px-6 lg:px-8 pb-16 sm:pb-24 lg:pb-32">
         <div className="space-y-12">
-          <h3 className="text-4xl lg:text-6xl font-bold text-blue-500">
+          <h3 className="text-4xl lg:text-6xl font-bold text-blue-900">
             Research and Publications
           </h3>
           <p className="text-lg lg:text-xl">
@@ -68,7 +68,7 @@ const ResearchAndPublications = async () => {
                   
                   <div className="w-full space-y-2">
                     <Link href={`https:${(publicationFile as ContentfulAsset).fields.file.url}`} target="_blank">
-                    <div className="h-56 sm:h-72 lg:h-80 w-full rounded-xl bg-secondary-base p-6 flex flex-col justify-between group hover:-translate-y-2 hover:shadow-xl transition-all duration-500">
+                    <div className="h-56 sm:h-72 lg:h-80 w-full rounded-xl bg-gold-400 p-6 flex flex-col justify-between group hover:-translate-y-2 hover:shadow-xl transition-all duration-500">
                       <span className="text-sm opacity-80 text-white">
                         Publication
                       </span>

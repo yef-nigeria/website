@@ -57,7 +57,7 @@ export function Home() {
           ))}
         </div>
       </div>
-      <div className="bg-blue-500 text-white py-32">
+      <div className="bg-blue-800 text-white py-32">
         <div className="container px-4 sm:px-6 mx-auto space-y-32">
           <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
             <div className="space-y-6 w-full">

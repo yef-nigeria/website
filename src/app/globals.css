@@ -8,12 +8,11 @@
   --color-*: initial;
   --color-white: #ffffff;
 
-  --color-blue-100: #ebf4fb;
-  --color-blue-200: #b0d1ed;
-  --color-blue-300: #61a4dc;
-  --color-blue-400: #398dd3;
-  --color-blue-500: #2e71a9;
-  --color-blue-600: #22557f;
+  --color-blue-100: #E8EDFB;
+  --color-blue-400: #6B88E8;
+  --color-blue-600: #398dd3;
+  --color-blue-800: #1A39B2;
+  --color-blue-900: #0F2280;
 
   --color-gray-50: #f8f8f8;
   --color-gray-100: #f2f2f2;
@@ -29,6 +28,16 @@
   --color-brown-400: #d37f39;
   --color-brown-500: #7f4c22;
   --color-brown-600: #2a190b;
+
+  --color-green-100: #E6F6EE;
+  --color-green-400: #6ECFA0;
+  --color-green-700: #2BA066;
+  --color-green-900: #1A7A4A;
+
+  --color-gold-200: #F5D580;
+  --color-gold-400: #E8B84B;
+
+  --color-mist: #F2F5FC;
 
   --color-accent-base: #f2994a;
   --color-accent: hsl(var(--accent));

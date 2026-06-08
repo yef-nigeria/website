@@ -51,7 +51,7 @@ const Navbar = () => {
   }, [mobileMenuOpen, pathname]);
 
   return (
-    <header className="bg-blue-500 py-2 text-white w-full sticky top-0 z-50">
+    <header className="bg-blue-900 py-2 text-white w-full sticky top-0 z-50">
       <NavigationMenu className="justify-between container mx-auto list-none px-4 sm:px-6 lg:px-8">
         <NavigationMenuItem className="shrink-0">
           <NavigationMenuLink asChild>
@@ -85,7 +85,7 @@ const Navbar = () => {
                     key={item.title}
                     title={item.title}
                     href={item.href}
-                    className="hover:bg-blue-100 hover:text-blue-500 p-2 rounded-md transition-all"
+                    className="hover:bg-blue-100 hover:text-blue-900 p-2 rounded-md transition-all"
                   />
                 ))}
               </ul>
@@ -110,7 +110,7 @@ const Navbar = () => {
             </NavigationMenuLink>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <Button asChild size="sm" className="hidden md:inline-flex">
+            <Button asChild size="sm" className="hidden md:inline-flex" variant={'secondary'}>
               <Link
                 target="_blank"
                 href={
@@ -126,7 +126,7 @@ const Navbar = () => {
         {/* Mobile menu button */}
         <button
           type="button"
-          className="md:hidden p-2 rounded-md hover:bg-blue-600 focus:outline-hidden focus:ring-2 focus:ring-white/50"
+          className="md:hidden p-2 rounded-md hover:bg-blue-900 focus:outline-hidden focus:ring-2 focus:ring-white/50"
           aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
           aria-expanded={mobileMenuOpen}
           onClick={() => setMobileMenuOpen((open) => !open)}
@@ -147,12 +147,12 @@ const Navbar = () => {
         )}
         aria-hidden={!mobileMenuOpen}
       >
-        <nav className="bg-blue-600 border-t border-blue-400/30 px-4 py-4 space-y-1">
+        <nav className="bg-blue-900 border-t border-blue-400/30 px-4 py-4 space-y-1">
           {(() => {
             const mainLinkStyle = (href: string) =>
               cn(
                 "block py-2.5 px-3 rounded-md text-sm font-medium transition-colors text-white",
-                pathname === href ? "bg-blue-500" : "hover:bg-blue-500/80",
+                pathname === href ? "bg-blue-800" : "hover:bg-blue-800/80",
               );
             return (
               <>
@@ -171,8 +171,8 @@ const Navbar = () => {
                     className={cn(
                       "flex w-full items-center justify-between py-2.5 px-3 rounded-md text-sm font-medium transition-colors text-white",
                       pathname.startsWith("/about")
-                        ? "bg-blue-500"
-                        : "hover:bg-blue-500/80",
+                        ? "bg-blue-800"
+                        : "hover:bg-blue-800/80",
                     )}
                     onClick={() => setAboutDropdownOpen((open) => !open)}
                     aria-expanded={aboutDropdownOpen}
@@ -208,8 +208,8 @@ const Navbar = () => {
                           className={cn(
                             "block py-2 px-3 rounded-md text-sm font-medium transition-colors text-white",
                             pathname === item.href
-                              ? "bg-blue-500"
-                              : "hover:bg-blue-500/80",
+                              ? "bg-blue-800"
+                              : "hover:bg-blue-800/80",
                           )}
                         >
                           {item.title}
