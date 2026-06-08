@@ -116,7 +116,7 @@ const YEFImpact = () => {
             </div>
             <Link
               href={"who-we-are#history"}
-              className="flex justify-between items-center p-3 border-t-[1px] border-gray-100 w-full hover:bg-gray-100 h-fit font-bold text-sm sm:text-base"
+              className="flex justify-between items-center p-3 border-t border-gray-100 w-full hover:bg-gray-100 h-fit font-bold text-sm sm:text-base"
             >
               Learn more about YEF&apos;s History
               <ArrowRight strokeWidth={1.25} />

@@ -40,7 +40,7 @@ export function Home() {
               potential.
             </p>
           </div>
-          <div className="flex justify-between items-center p-3 border-t-[1px] border-gray-100 w-full hover:bg-gray-100 h-fit font-bold">
+          <div className="flex justify-between items-center p-3 border-t border-gray-100 w-full hover:bg-gray-100 h-fit font-bold">
             View all our projects
             <ArrowRight strokeWidth={1.25} />
           </div>
@@ -71,7 +71,7 @@ export function Home() {
 
             <Link
               href={"about/yef-impact"}
-              className="flex justify-between items-center p-3 border-t-[1px] border-gray-100/10 w-full hover:bg-gray-100/10 transition-all h-fit font-bold"
+              className="flex justify-between items-center p-3 border-t border-gray-100/10 w-full hover:bg-gray-100/10 transition-all h-fit font-bold"
             >
               Learn more about the YEF Impact <ArrowRight strokeWidth={1.25} />
             </Link>

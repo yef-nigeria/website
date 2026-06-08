@@ -25,7 +25,7 @@ const StaffProfile = ({ staff, children }: StaffProfileProps) => {
       <DialogContent className="max-w-lg sm:max-w-xl">
         <DialogHeader>
           <div className="flex items-start gap-4">
-            <div className="relative h-16 w-16 sm:h-20 sm:w-20 rounded-full overflow-hidden bg-brown-200 flex-shrink-0">
+            <div className="relative h-16 w-16 sm:h-20 sm:w-20 rounded-full overflow-hidden bg-brown-200 shrink-0">
               <Image
                 src={staff.imageSrc}
                 alt={staff.name}

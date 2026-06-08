@@ -199,9 +199,9 @@ export default function HistoryTimeline() {
                     setIsAutoPlaying(false);
                     selectIndex(index);
                   }}
-                  className={`relative z-10 text-center px-4 py-3 md:p-3 rounded-md block transition-colors whitespace-nowrap min-h-11 focus:outline-none focus:ring-2 focus:ring-white/60 ${
+                  className={`relative z-10 text-center px-4 py-3 md:p-3 rounded-md block transition-colors whitespace-nowrap min-h-11 focus:outline-hidden focus:ring-2 focus:ring-white/60 ${
                     isActive
-                      ? "text-white font-medium bg-blue-600 shadow"
+                      ? "text-white font-medium bg-blue-600 shadow-sm"
                       : "text-blue-600 border border-blue-600/20 bg-blue-100 hover:bg-blue-200"
                   }`}
                 >
@@ -261,7 +261,7 @@ export default function HistoryTimeline() {
                   role="tabpanel"
                   aria-labelledby={`history-tab-${activeYear}`}
                   tabIndex={0}
-                  className="text-base sm:text-lg lg:text-xl leading-relaxed text-gray-800 outline-none"
+                  className="text-base sm:text-lg lg:text-xl leading-relaxed text-gray-800 outline-hidden"
                 >
                   {activeYear ? historyContent[activeYear] : null}
                 </div>

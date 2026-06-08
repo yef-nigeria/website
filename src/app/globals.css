@@ -1,50 +1,149 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+@plugin 'tailwindcss-animate';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --color-*: initial;
+  --color-white: #ffffff;
+
+  --color-blue-100: #ebf4fb;
+  --color-blue-200: #b0d1ed;
+  --color-blue-300: #61a4dc;
+  --color-blue-400: #398dd3;
+  --color-blue-500: #2e71a9;
+  --color-blue-600: #22557f;
+
+  --color-gray-50: #f8f8f8;
+  --color-gray-100: #f2f2f2;
+  --color-gray-200: #cccccc;
+  --color-gray-300: #979797;
+  --color-gray-400: #666666;
+  --color-gray-500: #333333;
+  --color-gray-600: #212121;
+
+  --color-brown-100: #fbf2eb;
+  --color-brown-200: #edccb0;
+  --color-brown-300: #e0a574;
+  --color-brown-400: #d37f39;
+  --color-brown-500: #7f4c22;
+  --color-brown-600: #2a190b;
+
+  --color-accent-base: #f2994a;
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+
+  --color-secondary-base: #27ae60;
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  --color-chart-1: hsl(var(--chart-1));
+  --color-chart-2: hsl(var(--chart-2));
+  --color-chart-3: hsl(var(--chart-3));
+  --color-chart-4: hsl(var(--chart-4));
+  --color-chart-5: hsl(var(--chart-5));
+
+  --font-*: initial;
+  --font-sat:
+    Satoshi, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-cab:
+    CabinetGrotesk, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
   }
 }
 
-@font-face {
-  font-family: "Satoshi";
-  src: url("/assets/fonts/Satoshi/Satoshi-Variable.ttf");
-}
+@layer utilities {
+  :root {
+    --foreground-rgb: 0, 0, 0;
+    --background-start-rgb: 214, 219, 220;
+    --background-end-rgb: 255, 255, 255;
+  }
 
-@font-face {
-  font-family: "CabinetGrotesk";
-  src: url("/assets/fonts/CabinetGrotesk/CabinetGrotesk-Variable.ttf");
-}
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --foreground-rgb: 255, 255, 255;
+      --background-start-rgb: 0, 0, 0;
+      --background-end-rgb: 0, 0, 0;
+    }
+  }
 
-html {
-  @apply font-sat;
-  font-size: max(calc(16 * (100vw / 1920)), 16px);
-  overflow: auto;
-  scroll-behavior: smooth;
-}
+  @font-face {
+    font-family: 'Satoshi';
+    src: url('/assets/fonts/Satoshi/Satoshi-Variable.ttf');
+  }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  @apply font-cab;
-  line-height: 1.25;
-}
+  @font-face {
+    font-family: 'CabinetGrotesk';
+    src: url('/assets/fonts/CabinetGrotesk/CabinetGrotesk-Variable.ttf');
+  }
 
-body {
-  @apply bg-white text-gray-600;
+  html {
+    @apply font-sat;
+    font-size: max(calc(16 * (100vw / 1920)), 16px);
+    overflow: auto;
+    scroll-behavior: smooth;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-cab;
+    line-height: 1.25;
+  }
+
+  body {
+    @apply bg-white text-gray-600;
+  }
 }
 
 @layer base {

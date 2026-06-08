@@ -46,7 +46,7 @@ const ThematicAreas = () => {
               <div className="w-full space-y-4 text-white">
                 <div
                   className={[
-                    "group rounded-2xl p-5 sm:p-6 lg:p-8 transition-all duration-500 shadow-sm hover:shadow-xl hover:-translate-y-2 flex flex-col justify-between gap-4 sm:gap-6",
+                    "group rounded-2xl p-5 sm:p-6 lg:p-8 transition-all duration-500 shadow-xs hover:shadow-xl hover:-translate-y-2 flex flex-col justify-between gap-4 sm:gap-6",
                     index % 2 === 0 ? "bg-blue-600" : "bg-brown-500",
                   ].join(" ")}
                 >

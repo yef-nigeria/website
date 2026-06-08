@@ -53,7 +53,7 @@ const Navbar = () => {
   return (
     <header className="bg-blue-500 py-2 text-white w-full sticky top-0 z-50">
       <NavigationMenu className="justify-between container mx-auto list-none px-4 sm:px-6 lg:px-8">
-        <NavigationMenuItem className="flex-shrink-0">
+        <NavigationMenuItem className="shrink-0">
           <NavigationMenuLink asChild>
             <Link href="/" className="flex items-center gap-2 min-w-0">
               <Image
@@ -61,7 +61,7 @@ const Navbar = () => {
                 alt="yef-logo"
                 width={80}
                 height={80}
-                className="h-12 w-12 sm:h-16 sm:w-16 md:h-20 md:w-20 object-contain flex-shrink-0"
+                className="h-12 w-12 sm:h-16 sm:w-16 md:h-20 md:w-20 object-contain shrink-0"
               />
               <p className="font-semibold tracking-tight leading-tight uppercase ">
                 Youth Empowerment <br />
@@ -126,7 +126,7 @@ const Navbar = () => {
         {/* Mobile menu button */}
         <button
           type="button"
-          className="md:hidden p-2 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-white/50"
+          className="md:hidden p-2 rounded-md hover:bg-blue-600 focus:outline-hidden focus:ring-2 focus:ring-white/50"
           aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
           aria-expanded={mobileMenuOpen}
           onClick={() => setMobileMenuOpen((open) => !open)}
