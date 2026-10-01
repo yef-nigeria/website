@@ -14,7 +14,7 @@ jobs:
         with:
           host: ${{ secrets.CPANEL_HOST }}
           username: ${{ secrets.CPANEL_USER }}
-          key: ${{ secrets.CPANEL_SSH_KEY }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             # Navigate to your app directory
             cd /home/${{ secrets.CPANEL_USER }}/public_html/yef-website
