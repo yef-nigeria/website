@@ -1,0 +1,35 @@
+name: Deploy to cPanel
+
+on:
+  push:
+    branches:
+      - main      # Production deployment
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.CPANEL_HOST }}
+          username: ${{ secrets.CPANEL_USER }}
+          key: ${{ secrets.CPANEL_SSH_KEY }}
+          script: |
+            # Navigate to your app directory
+            cd /home/${{ secrets.CPANEL_USER }}/public_html/yef-website
+            
+            # Pull the latest changes
+            git pull origin main
+            
+            # Install dependencies (if package.json changed)
+            npm install --production
+            
+            # Build the Next.js app (recommended for performance)
+            npm run build
+            
+            # Restart the Node.js app in cPanel
+            # The exact path varies. Check the Setup Node.js App page for the restart command.
+            # It often looks like this:
+            mkdir -p tmp
+            touch tmp/restart.txt
