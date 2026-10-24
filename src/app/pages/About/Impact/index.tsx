@@ -210,27 +210,40 @@ const YEFImpact = () => {
         </div>
       </section>
       <section className="bg-blue-100 py-16 sm:py-24 lg:py-32">
-        <section className="container mx-auto px-4 sm:px-6 lg:px-8 items-end space-y-10 sm:space-y-16">
+        <section className="container mx-auto px-4 sm:px-6 lg:px-8 space-y-10 sm:space-y-16">
           <p className="font-bold text-gray-400">Sponsors & Partners</p>
           <p className="max-w-xl">
             Our sponsors and partners aid in providing the best opportunities
             that lead to our youths being equipped with skills to empower them.
           </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10 lg:gap-16">
-            {SPONSOR_NAME.map((item) => (
-              <div
-                className="h-28 sm:h-36 lg:h-44 w-full flex p-4 sm:p-6 relative bg-white/40 rounded-xl"
-                key={item}
-              >
-                <Image
-                  src={`/assets/images/logos/${item.toLowerCase().replace(" ", "-")}-logo.png`}
-                  className="m-auto p-4 sm:p-6 object-contain"
-                  alt={item}
-                  fill
-                />
-              </div>
-            ))}
-          </div>
+          <Carousel
+            className="w-full relative"
+            opts={{
+              align: "start",
+              loop: true,
+              slidesToScroll: "auto",
+            }}
+          >
+            <CarouselContent className="-ml-4 sm:-ml-6 md:-ml-8 lg:-ml-12">
+              {SPONSOR_NAME.map((item) => (
+                <CarouselItem
+                  key={item.name}
+                  className="pl-4 sm:pl-6 md:pl-8 lg:pl-12 basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4 flex justify-center"
+                >
+                  <div className="h-28 sm:h-36 w-full max-w-[240px] flex p-4 relative bg-white border border-gray-200/50 rounded-xl shadow-sm hover:shadow-lg hover:ring ring-blue-200/50 transition-all group overflow-hidden">
+                    <Image
+                      src={`/assets/images/logos/${item.logo}`}
+                      className="m-auto p-2 object-contain transition-all duration-300"
+                      alt={item.name}
+                      fill
+                    />
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
+          </Carousel>
         </section>
       </section>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 leading-tight text-center space-y-5">
