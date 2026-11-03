@@ -440,7 +440,7 @@ const WhoWeAre = async () => {
             {OUR_TEAM.map((member, i) => (
               <StaffProfile key={i} staff={member}>
                 <div className="w-full space-y-4 cursor-pointer">
-                  <div className="relative h-80 lg:h-96 w-full rounded-md bg-blue-100 border-transparent border-8 hover:border-green-700 overflow-hidden transition-all duration-300 hover:rotate-1 sm:hover:rotate-2">
+                  <div className="relative h-80 lg:h-96 w-full rounded-md bg-blue-100 border-transparent border-8 hover:border-green-400 overflow-hidden transition-all duration-300 hover:rotate-1 sm:hover:rotate-2">
                     <Image
                       src={member.imageSrc}
                       alt={member.name}
