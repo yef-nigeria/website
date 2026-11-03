@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import HistoryTimeline from "../History Timeline";
 import StaffProfile from "./StaffProfile";
+import { getHistoricalImages } from "@/utils/api";
 
 const OUR_TEAM = [
   {
@@ -353,23 +354,27 @@ const OUR_TEAM = [
   },
 ];
 
-const WhoWeAre = () => {
+const WhoWeAre = async () => {
+  const historicalImages = await getHistoricalImages();
   return (
     <section>
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 bg-gray-50 py-20 lg:py-32 sm:mt-20 lg:mt-32">
-        <h3 className="text-blue-500 text-2xl sm:text-3xl lg:text-4xl font-semibold text-center">
+      
+        <div className="relative bg-gray-500/60 bg-[url(/assets/images/goal-girls-01.jpg)] bg-blend-overlay bg-cover  min-h-[40vh] lg:h-[calc(60vh-2rem)] flex items-end content-center px-4 py-12">
+        <div className="container mx-auto px-0 lg:px-6">
+          <h3 className="text-white text-shadow-sm text-2xl sm:text-3xl lg:text-7xl font-semibold">
           We equip the African Youth with skills for a better future.
         </h3>
+        </div>
       </div>
-      <div className="container p-6 sm:px-0 space-y-6 sm:space-y-24 lg:space-y-32 mx-auto  grid grid-cols-1 md:grid-cols-2 text-center text-base sm:text-lg font-semibold">
-        <div className="bg-blue-100 flex justify-center items-center py-6 pr-6 sm:py-16 lg:py-32 text-blue-500 rounded-xl">
+      <div className="container p-6 sm:px-0 mx-auto gap-6 grid grid-cols-1 md:grid-cols-2 text-center text-base sm:text-lg font-semibold">
+        <div className="bg-blue-100 flex justify-center items-center py-6 pr-6 sm:py-16 text-blue-900 rounded-xl">
           <p className="text-left text-xl sm:text-3xl -rotate-90">Vision</p>
           <p className="max-w-md mx-auto">
             To see a proactive youth population with skills to facilitate
             positive change in their immediate communities.
           </p>
         </div>
-        <div className="bg-blue-500 flex justify-center items-center py-6 pr-6 sm:py-16 lg:py-32 text-white rounded-xl">
+        <div className="bg-blue-900 flex justify-center items-center py-6 pr-6 sm:py-16 text-white rounded-xl">
           <p className="text-left text-xl sm:text-3xl -rotate-90">Mission</p>
           <p className="max-w-md mx-auto">
             To empower youth through strategic partnership and programs in
@@ -386,10 +391,10 @@ const WhoWeAre = () => {
             help unlock their full potential.
           </p>
         </div>
-        <section className="bg-gray-50" id="history">
+        <section className="bg-mist" id="history">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-32 space-y-8">
             <p className="font-bold text-gray-400">Our History</p>
-            <HistoryTimeline />
+            <HistoryTimeline historicalImages={historicalImages} />
           </div>
         </section>
         <section className="container mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12">
@@ -402,7 +407,7 @@ const WhoWeAre = () => {
                 core values reflect our commitment to this.
               </p>
             </div>
-            <div className="bg-gray-50 w-full h-56 sm:h-72 lg:h-80 rounded-xl sm:rounded-2xl bg-[url(/assets/images/usaid.jpg)] bg-blend-multiply bg-cover bg-center" />
+            <div className="bg-mist w-full h-56 sm:h-72 lg:h-80 rounded-xl sm:rounded-2xl bg-[url(/assets/images/usaid.jpg)] bg-blend-multiply bg-cover bg-center" />
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-1 gap-4 lg:gap-6 lg:col-span-5 lg:pl-6">
             {[
@@ -414,7 +419,7 @@ const WhoWeAre = () => {
             ].map((value, i) => (
               <div
                 key={i}
-                className="text-lg sm:text-xl lg:text-2xl font-semibold text-blue-600"
+                className="text-lg sm:text-xl lg:text-2xl font-semibold text-blue-900"
               >
                 {value}
               </div>
@@ -423,7 +428,7 @@ const WhoWeAre = () => {
         </section>
         <section className="py-16 sm:py-24 lg:py-40 border-t border-b border-gray-100">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <p className="font-cab text-2xl sm:text-3xl lg:text-5xl leading-tight font-semibold text-blue-600">
+            <p className="font-cab text-2xl sm:text-3xl lg:text-5xl leading-tight font-semibold text-blue-900">
               Creating a nation where the innate potential of our youth is
               harnessed for positive self-development.
             </p>
@@ -435,7 +440,7 @@ const WhoWeAre = () => {
             {OUR_TEAM.map((member, i) => (
               <StaffProfile key={i} staff={member}>
                 <div className="w-full space-y-4 cursor-pointer">
-                  <div className="relative h-80 lg:h-96 w-full rounded-md bg-blue-500 border-transparent border-8 hover:border-secondary-base overflow-hidden transition-all duration-300 hover:rotate-1 sm:hover:rotate-2">
+                  <div className="relative h-80 lg:h-96 w-full rounded-md bg-blue-100 border-transparent border-8 hover:border-green-700 overflow-hidden transition-all duration-300 hover:rotate-1 sm:hover:rotate-2">
                     <Image
                       src={member.imageSrc}
                       alt={member.name}
@@ -443,7 +448,7 @@ const WhoWeAre = () => {
                       className="object-cover object-[15%_25%] lg:object-[50%_30%]"
                     />
                   </div>
-                  <p className="border border-secondary-base/30 p-2 w-fit text-xs text-secondary-base rounded">
+                  <p className="border border-green-700/30 p-2 w-fit text-xs text-green-700 rounded">
                     {member.role}
                   </p>
                   <p className="font-cab text-xl sm:text-2xl font-medium">

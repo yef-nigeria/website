@@ -5,7 +5,7 @@ import { Button } from "./ui/button";
 
 const Footer = () => {
   return (
-    <section className="bg-blue-500 bg-[url(/assets/images/footer-bg.png)] bg-blend-darken bg-repeat mt-16 md:mt-24 lg:mt-32">
+    <section className="bg-blue-900/80 bg-[url(/assets/images/footer-bg.png)] bg-blend-darken bg-repeat mt-16 md:mt-24 lg:mt-32">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12 lg:py-14 text-white grid grid-cols-1 lg:grid-cols-7 gap-8 lg:gap-6">
         <h3 className="text-lg font-semibold uppercase font-sat col-span-1 lg:col-span-7 order-1">
           Youth Empowerment Foundation

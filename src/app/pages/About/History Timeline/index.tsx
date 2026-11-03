@@ -2,101 +2,157 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Play, Pause } from "lucide-react";
+import Image from "next/image";
 
-const historyContent: Record<string, React.ReactNode> = {
-  "1995": (
-    <div className="space-y-4">
-      <p>
-        Founded in{" "}
-        <span className="font-medium text-xl sm:text-2xl lg:text-3xl text-blue-500 tracking-tighter">
-          1995
-        </span>{" "}
-        by sisters Iwalola Akin‑Jimoh and Fiwasade Onifade, the Youth
-        Empowerment Foundation (YEF) emerged from a simple but urgent
-        observation.
-      </p>
-      <p className="font-medium bg-blue-600 text-white px-2 py-1 rounded w-fit">
-        Nigeria’s youth population was growing rapidly, yet support systems were
-        not.
-      </p>
-      <p>
-        In its earliest years, YEF focused on research and grassroots
-        engagement—listening to young people, mapping their needs, and building
-        community-based responses that would shape decades of programming.
-      </p>
-    </div>
-  ),
+const historyContent: Record<
+  string,
+  {
+    text: React.ReactNode;
+    fallbackImages: string[];
+  }
+> = {
+  "1995": {
+    text: (
+      <div className="space-y-4">
+        <p>
+          Founded in{" "}
+          <span className="font-medium text-xl sm:text-2xl lg:text-3xl text-blue-900 tracking-tighter">
+            1995
+          </span>{" "}
+          by sisters Iwalola Akin‑Jimoh and Fiwasade Onifade, the Youth
+          Empowerment Foundation (YEF) emerged from a simple but urgent
+          observation.
+        </p>
+        <p className="font-medium bg-blue-900 text-white px-2 py-1 rounded w-fit">
+          Nigeria’s youth population was growing rapidly, yet support systems were
+          not.
+        </p>
+        <p>
+          In its earliest years, YEF focused on research and grassroots
+          engagement—listening to young people, mapping their needs, and building
+          community-based responses that would shape decades of programming.
+        </p>
+      </div>
+    ),
+    fallbackImages: ["/assets/images/IMG_0286.jpg", "/assets/images/IMG_6770.jpg"],
+  },
 
-  "2001": (
-    <div className="space-y-4">
-      <p>
-        In response to the HIV/AIDS crisis of the late 1990s, in{" "}
-        <span className="font-medium text-xl sm:text-2xl lg:text-3xl text-blue-500 tracking-tighter">
-          2001
-        </span>
-        , YEF launched one of Nigeria’s first youth-focused HIV/AIDS telephone
-        hotlines.
-      </p>
-      <p className="font-medium">
-        It served as a confidential lifeline providing accurate information,
-        counselling, and hope to thousands of young people.
-      </p>
-    </div>
-  ),
+  "2001": {
+    text: (
+      <div className="space-y-4">
+        <p>
+          In response to the HIV/AIDS crisis of the late 1990s, in{" "}
+          <span className="font-medium text-xl sm:text-2xl lg:text-3xl text-blue-900 tracking-tighter">
+            2001
+          </span>
+          , YEF launched one of Nigeria’s first youth-focused HIV/AIDS telephone
+          hotlines.
+        </p>
+        <p className="font-medium">
+          It served as a confidential lifeline providing accurate information,
+          counselling, and hope to thousands of young people.
+        </p>
+      </div>
+    ),
+    fallbackImages: ["/assets/images/usaid.jpg", "/assets/images/usaid-girls-cropped.jpg"],
+  },
 
-  "2006": (
-    <div className="space-y-4">
-      <p>
-        By{" "}
-        <span className="font-medium text-xl sm:text-2xl lg:text-3xl text-blue-500 tracking-tighter">
-          2006
-        </span>
-        , YEF expanded its work beyond awareness into direct services.
-      </p>
-      <p>
-        This included voluntary counselling, testing, and peer education
-        programmes across schools and communities—strengthening prevention and
-        youth leadership.
-      </p>
-    </div>
-  ),
+  "2006": {
+    text: (
+      <div className="space-y-4">
+        <p>
+          By{" "}
+          <span className="font-medium text-xl sm:text-2xl lg:text-3xl text-blue-900 tracking-tighter">
+            2006
+          </span>
+          , YEF expanded its work beyond awareness into direct services.
+        </p>
+        <p>
+          This included voluntary counselling, testing, and peer education
+          programmes across schools and communities—strengthening prevention and
+          youth leadership.
+        </p>
+      </div>
+    ),
+    fallbackImages: ["/assets/images/hero-image.png", "/assets/images/usaid-girls-cropped.jpg"],
+  },
 
-  "2010s": (
-    <div className="space-y-4">
-      <p>
-        In{" "}
-        <span className="font-medium text-xl sm:text-2xl lg:text-3xl text-blue-500 tracking-tighter">
-          2010
-        </span>
-        , programmes broadened to address holistic youth development.
-      </p>
-      <p>
-        This included education support, child protection, vocational training,
-        and sports-for-development—equipping young people with skills for life
-        and livelihoods.
-      </p>
-    </div>
-  ),
+  "2010s": {
+    text: (
+      <div className="space-y-4">
+        <p>
+          In{" "}
+          <span className="font-medium text-xl sm:text-2xl lg:text-3xl text-blue-900 tracking-tighter">
+            2010
+          </span>
+          , programmes broadened to address holistic youth development.
+        </p>
+        <p>
+          This included education support, child protection, vocational training,
+          and sports-for-development—equipping young people with skills for life
+          and livelihoods.
+        </p>
+      </div>
+    ),
+    fallbackImages: ["/assets/images/usaid.jpg", "/assets/images/IMG_0286.jpg"],
+  },
 
-  "2020s": (
-    <div className="space-y-4">
-      <p>
-        <span className="font-medium text-xl sm:text-2xl lg:text-3xl text-blue-500 tracking-tighter">
-          Today
-        </span>
-        , YEF operates across multiple states, reaching thousands through
-        integrated programmes in health, education, empowerment, and advocacy.
-      </p>
-      <p>We’re building resilient futures for Nigeria’s next generation.</p>
-    </div>
-  ),
+  "2020s": {
+    text: (
+      <div className="space-y-4">
+        <p>
+          <span className="font-medium text-xl sm:text-2xl lg:text-3xl text-blue-900 tracking-tighter">
+            Today
+          </span>
+          , YEF operates across multiple states, reaching thousands through
+          integrated programmes in health, education, empowerment, and advocacy.
+        </p>
+        <p>We’re building resilient futures for Nigeria’s next generation.</p>
+      </div>
+    ),
+    fallbackImages: ["/assets/images/hero-image.png", "/assets/images/IMG_6770.jpg"],
+  },
 };
 
-export default function HistoryTimeline() {
+export default function HistoryTimeline({
+  historicalImages = [],
+}: {
+  historicalImages?: any[];
+}) {
   const years = useMemo(() => ["1995", "2001", "2006", "2010s", "2020s"], []);
   const [activeIndex, setActiveIndex] = useState(0);
   const activeYear = years[activeIndex];
   const progressPercentage = (activeIndex / (years.length - 1)) * 100;
+
+  const getTimelineYear = (dateStr: string): string => {
+    if (!dateStr) return "";
+    const year = parseInt(dateStr.substring(0, 4), 10);
+    if (isNaN(year)) return "";
+
+    if (year <= 2000) return "1995";
+    if (year >= 2001 && year <= 2004) return "2001";
+    if (year >= 2005 && year <= 2009) return "2006";
+    if (year >= 2010 && year <= 2019) return "2010s";
+    return "2020s";
+  };
+
+  const activeYearImages = useMemo(() => {
+    return historicalImages.filter(
+      (img) => getTimelineYear(img.fields.date) === activeYear
+    );
+  }, [historicalImages, activeYear]);
+
+  const displayImages = useMemo(() => {
+    if (activeYearImages.length > 0) {
+      return activeYearImages.map(
+        (img) =>
+          img.fields.file.fields.file.url.startsWith("//")
+            ? `https:${img.fields.file.fields.file.url}`
+            : img.fields.file.fields.file.url
+      );
+    }
+    return historyContent[activeYear]?.fallbackImages || [];
+  }, [activeYearImages, activeYear]);
   const tabRefs = useRef<Array<HTMLButtonElement | null>>([]);
 
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
@@ -127,13 +183,13 @@ export default function HistoryTimeline() {
   return (
     <section className="relative">
       <div className="flex items-center justify-between gap-3 pb-3 absolute -top-14 right-0">
-        <p className="text-xs text-blue-600/70">
+        <p className="text-xs text-blue-900/70">
           {activeIndex + 1}/{years.length}
         </p>
         <button
           type="button"
           onClick={() => setIsAutoPlaying((p) => !p)}
-          className="text-xs font-semibold uppercase tracking-wider text-white bg-blue-600 hover:bg-blue-700 transition-colors rounded-md px-3 py-2"
+          className="text-xs font-semibold uppercase tracking-wider text-white bg-blue-900 hover:bg-blue-700 transition-colors rounded-md px-3 py-2"
           aria-pressed={isAutoPlaying}
         >
           {isAutoPlaying ? (
@@ -199,10 +255,10 @@ export default function HistoryTimeline() {
                     setIsAutoPlaying(false);
                     selectIndex(index);
                   }}
-                  className={`relative z-10 text-center px-4 py-3 md:p-3 rounded-md block transition-colors whitespace-nowrap min-h-11 focus:outline-none focus:ring-2 focus:ring-white/60 ${
+                  className={`relative z-10 text-center px-4 py-3 md:p-3 rounded-md block transition-colors whitespace-nowrap min-h-11 focus:outline-hidden focus:ring-2 focus:ring-white/60 ${
                     isActive
-                      ? "text-white font-medium bg-blue-600 shadow"
-                      : "text-blue-600 border border-blue-600/20 bg-blue-100 hover:bg-blue-200"
+                      ? "text-white font-medium bg-blue-900 shadow-sm"
+                      : "text-blue-900 border border-blue-900/20 bg-blue-100 hover:bg-blue-200"
                   }`}
                 >
                   {year}
@@ -211,9 +267,9 @@ export default function HistoryTimeline() {
             })}
           </div>
           {/* Mobile (horizontal) progress bar */}
-          <div className="md:hidden relative h-1 w-full bg-blue-200/50 rounded-full">
+          <div className="md:hidden relative h-1 w-full bg-blue-100/50 rounded-full">
             <motion.div
-              className="absolute left-0 top-0 h-1 bg-blue-600 rounded-full"
+              className="absolute left-0 top-0 h-1 bg-blue-900 rounded-full"
               animate={{ width: `${progressPercentage}%` }}
               transition={{ duration: 0.8, ease: "easeInOut" }}
             />
@@ -221,9 +277,9 @@ export default function HistoryTimeline() {
           <p className="sr-only" aria-live="polite">
             {`Step ${activeIndex + 1} of ${years.length}`}
           </p>
-          <div className="hidden md:block absolute top-0 left-1/2 -translate-x-1/2 w-1 h-full bg-blue-200/50 rounded-full" />
+          <div className="hidden md:block absolute top-0 left-1/2 -translate-x-1/2 w-1 h-full bg-blue-400/30 rounded-full" />
           <motion.div
-            className="hidden md:block absolute top-0 left-1/2 -translate-x-1/2 w-1 bg-blue-600 rounded-full"
+            className="hidden md:block absolute top-0 left-1/2 -translate-x-1/2 w-1 bg-blue-900 rounded-full"
             animate={{ height: `${progressPercentage}%` }}
             transition={{ duration: 0.8, ease: "easeInOut" }}
           />
@@ -261,9 +317,9 @@ export default function HistoryTimeline() {
                   role="tabpanel"
                   aria-labelledby={`history-tab-${activeYear}`}
                   tabIndex={0}
-                  className="text-base sm:text-lg lg:text-xl leading-relaxed text-gray-800 outline-none"
+                  className="text-base sm:text-lg lg:text-xl leading-relaxed text-gray-800 outline-hidden"
                 >
-                  {activeYear ? historyContent[activeYear] : null}
+                  {activeYear ? historyContent[activeYear]?.text : null}
                 </div>
               </motion.div>
             </AnimatePresence>
@@ -277,15 +333,24 @@ export default function HistoryTimeline() {
               duration: prefersReducedMotion ? 0 : 0.7,
             }}
           >
+            {/* insert images start */}
             <div className="flex flex-col sm:flex-row justify-between gap-4 mt-6 sm:mt-8">
-              {[1, 2].map((item) => (
+              {displayImages.slice(0, 2).map((imgUrl, index) => (
                 <div
-                  key={item}
-                  className="bg-blue-100 w-full h-48 sm:h-64 lg:h-72 rounded-xl sm:rounded-2xl"
-                  title={`card ${activeYear}`}
-                />
+                  key={imgUrl + index}
+                  className="relative w-full h-48 sm:h-64 lg:h-72 rounded-xl sm:rounded-2xl overflow-hidden hover:scale-[1.02] transition-transform duration-300 shadow-md"
+                >
+                  <Image
+                    src={imgUrl}
+                    alt={`History image ${activeYear} - ${index + 1}`}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 640px) 100vw, 50vw"
+                  />
+                </div>
               ))}
             </div>
+            {/* insert images end */}
           </motion.div>
         </div>
       </div>

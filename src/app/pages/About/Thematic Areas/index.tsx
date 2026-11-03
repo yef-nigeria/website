@@ -11,7 +11,7 @@ const ThematicAreas = () => {
       <section className="container mx-auto px-4 sm:px-6 lg:px-8 pb-16 sm:pb-24 lg:pb-32">
         <div className="grid grid-cols-1 md:grid-cols-2">
           <div className="space-y-12">
-            <h3 className="text-4xl lg:text-6xl font-bold text-blue-500">
+            <h3 className="text-4xl lg:text-6xl font-bold text-blue-900">
               Thematic Areas
             </h3>
             <p className="text-lg lg:text-xl">
@@ -46,8 +46,8 @@ const ThematicAreas = () => {
               <div className="w-full space-y-4 text-white">
                 <div
                   className={[
-                    "group rounded-2xl p-5 sm:p-6 lg:p-8 transition-all duration-500 shadow-sm hover:shadow-xl hover:-translate-y-2 flex flex-col justify-between gap-4 sm:gap-6",
-                    index % 2 === 0 ? "bg-blue-600" : "bg-brown-500",
+                    "group rounded-2xl p-5 sm:p-6 lg:p-8 transition-all duration-500 shadow-xs hover:shadow-xl hover:-translate-y-2 flex flex-col justify-between gap-4 sm:gap-6",
+                    index % 2 === 0 ? "bg-blue-900" : "bg-brown-500",
                   ].join(" ")}
                 >
                   <p className="text-lg sm:text-2xl font-medium z-20 relative">

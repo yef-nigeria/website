@@ -5,7 +5,7 @@ const YoungPeople = () => {
   return (
     <div className="space-y-16 md:space-y-24 lg:space-y-32">
       <section className="container mx-auto px-4 sm:px-6 lg:px-8 mt-16 sm:mt-24 lg:mt-32 space-y-10 sm:space-y-16">
-        <h3 className="text-blue-500 text-3xl sm:text-4xl lg:text-6xl font-semibold max-w-4xl leading-tight">
+        <h3 className="text-blue-900 text-3xl sm:text-4xl lg:text-6xl font-semibold max-w-4xl leading-tight">
           We believe in you—and we&apos;re here to help you believe in yourself.
         </h3>
         <div className="bg-gray-300 bg-[url(/assets/images/usaid-girls-cropped.jpg)] bg-blend-multiply bg-cover min-h-[40vh] sm:min-h-[45vh] lg:h-[calc(55vh-2rem)] bg-center rounded-xl sm:rounded-2xl" />
@@ -26,7 +26,7 @@ const YoungPeople = () => {
             (value, i) => (
               <div
                 key={i}
-                className="text-lg sm:text-xl lg:text-2xl font-semibold text-blue-600"
+                className="text-lg sm:text-xl lg:text-2xl font-semibold text-blue-900"
               >
                 {value}
               </div>
@@ -36,7 +36,7 @@ const YoungPeople = () => {
       </section>
       <section className="py-12 sm:py-16 border-t border-b border-gray-100">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="font-cab text-2xl sm:text-3xl lg:text-5xl leading-tight font-semibold text-blue-600">
+          <p className="font-cab text-2xl sm:text-3xl lg:text-5xl leading-tight font-semibold text-blue-900">
             Every child without exception has the power to become who they
             aspire to be, not who they are told to be.
           </p>
@@ -77,7 +77,7 @@ const YoungPeople = () => {
         <div className="space-y-6 sm:space-y-8 bg-blue-100 p-5 rounded-xl">
           <div className="flex items-center gap-4">
             <div className="bg-gray-600 rounded-full h-12 w-12" />
-            <span className="font-cab text-xl text-blue-500 font-semibold">
+            <span className="font-cab text-xl text-blue-900 font-semibold">
               Idiah Jah&apos;swill
             </span>
           </div>
